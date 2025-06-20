@@ -3,115 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Taniti Tourism</title>
+  <title>Activities in Taniti</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f3f8f5;
-      color: #333;
-    }
-
-    header, footer {
-      background: #006d5b;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    main {
-      padding: 2rem;
-    }
-
-    .activity-list article {
-      background: white;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .activity-list h2 {
-      margin-top: 0;
-    }
-
-    .page {
-      display: none;
-    }
-
-    .page.active {
-      display: block;
-    }
+    body { font-family: Arial, sans-serif; }
+    header, footer { background-color: #004d66; color: white; padding: 1em; text-align: center; }
+    nav a { margin: 0 1em; color: white; text-decoration: none; font-weight: bold; }
+    .hero { background: #cceeff; padding: 3em 1em; text-align: center; }
+    .section h2 { color: #004d66; margin-bottom: 1em; }
+    .filters button { margin: 0.25em; }
+    .footer-contact { margin-top: 1em; font-size: 0.9em; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to Taniti Island</h1>
+    <h1>Taniti Island Activities</h1>
     <nav>
-      <a id="homeLink">Home</a>
-      <a id="activitiesLink">Activities</a>
+      <a href="index.html">Home</a>
+      <a href="activities.html">Activities</a>
+      <a href="index.html#lodging">Lodging</a>
+      <a href="index.html#transport">Getting Around</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <!-- Home Page Section -->
-    <section id="homePage" class="page active">
-      <h2>Plan Your Trip</h2>
-      <p>Explore what Taniti has to offer. Visit volcanoes, relax on beaches, and enjoy the local culture!</p>
-    </section>
+  <div class="hero">
+    <h2>Discover Fun & Adventure</h2>
+    <p>Choose from outdoor thrills, cultural journeys, or peaceful escapes on the island.</p>
+  </div>
 
-    <!-- Activities Page Section -->
-    <section id="activitiesPage" class="page">
-      <h2>Activities in Taniti</h2>
-      <div class="activity-list">
-        <article>
-          <h3>🌋 Volcano Tours</h3>
-          <p>Guided tours to the island's active volcano with scenic views and safety gear included.</p>
-        </article>
-        <article>
-          <h3>🏖️ Beach Relaxation</h3>
-          <p>Sunbathe or swim at our pristine beaches with calm, clear waters.</p>
-        </article>
-        <article>
-          <h3>🌴 Rainforest Hiking</h3>
-          <p>Hike through lush rainforests with native wildlife and guided nature walks.</p>
-        </article>
-        <article>
-          <h3>🎭 Cultural Experiences</h3>
-          <p>Enjoy local dance performances, artisan markets, and traditional Tanitian food.</p>
-        </article>
+  <div class="container my-4">
+    <div class="section mb-5">
+      <h2 class="text-center">All Activities</h2>
+      <div class="filters text-center mb-3">
+        <button class="btn btn-primary" onclick="filterActivities('all')">All</button>
+        <button class="btn btn-primary" onclick="filterActivities('adventure')">Adventure</button>
+        <button class="btn btn-primary" onclick="filterActivities('relaxation')">Relaxation</button>
+        <button class="btn btn-primary" onclick="filterActivities('cultural')">Cultural</button>
       </div>
-    </section>
-  </main>
+
+      <div class="row">
+        <div class="col-md-4 mb-3" data-type="adventure">
+          <div class="card p-3">🌋 Volcano Hiking Tours</div>
+        </div>
+        <div class="col-md-4 mb-3" data-type="adventure">
+          <div class="card p-3">🌲 Zip-lining in the Rainforest</div>
+        </div>
+        <div class="col-md-4 mb-3" data-type="relaxation">
+          <div class="card p-3">🏖️ Sunbathing on Yellow Leaf Bay Beach</div>
+        </div>
+        <div class="col-md-4 mb-3" data-type="relaxation">
+          <div class="card p-3">💆‍♀️ Island Spa and Massage</div>
+        </div>
+        <div class="col-md-4 mb-3" data-type="cultural">
+          <div class="card p-3">🎭 Traditional Tanitian Dance Show</div>
+        </div>
+        <div class="col-md-4 mb-3" data-type="cultural">
+          <div class="card p-3">🏛️ Visit to Local History Museum</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Taniti Tourism</p>
+    <p>&copy; 2025 Visit Taniti Tourism Board</p>
+    <div class="footer-contact">Questions? <a href="index.html#contact" style="color: #ffcc00; text-decoration: underline;">Contact us</a></div>
   </footer>
 
   <script>
-    const homeLink = document.getElementById('homeLink');
-    const activitiesLink = document.getElementById('activitiesLink');
-    const homePage = document.getElementById('homePage');
-    const activitiesPage = document.getElementById('activitiesPage');
-
-    homeLink.addEventListener('click', () => {
-      homePage.classList.add('active');
-      activitiesPage.classList.remove('active');
-    });
-
-    activitiesLink.addEventListener('click', () => {
-      activitiesPage.classList.add('active');
-      homePage.classList.remove('active');
-    });
+    function filterActivities(type) {
+      const cards = document.querySelectorAll('[data-type]');
+      cards.forEach(card => {
+        card.parentElement.style.display = (type === 'all' || card.dataset.type === type) ? 'block' : 'none';
+      });
+    }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
