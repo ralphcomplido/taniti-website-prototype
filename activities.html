@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taniti Tourism</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f8f5;
+      color: #333;
+    }
+
+    header, footer {
+      background: #006d5b;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .activity-list article {
+      background: white;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .activity-list h2 {
+      margin-top: 0;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Taniti Island</h1>
+    <nav>
+      <a id="homeLink">Home</a>
+      <a id="activitiesLink">Activities</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Page Section -->
+    <section id="homePage" class="page active">
+      <h2>Plan Your Trip</h2>
+      <p>Explore what Taniti has to offer. Visit volcanoes, relax on beaches, and enjoy the local culture!</p>
+    </section>
+
+    <!-- Activities Page Section -->
+    <section id="activitiesPage" class="page">
+      <h2>Activities in Taniti</h2>
+      <div class="activity-list">
+        <article>
+          <h3>🌋 Volcano Tours</h3>
+          <p>Guided tours to the island's active volcano with scenic views and safety gear included.</p>
+        </article>
+        <article>
+          <h3>🏖️ Beach Relaxation</h3>
+          <p>Sunbathe or swim at our pristine beaches with calm, clear waters.</p>
+        </article>
+        <article>
+          <h3>🌴 Rainforest Hiking</h3>
+          <p>Hike through lush rainforests with native wildlife and guided nature walks.</p>
+        </article>
+        <article>
+          <h3>🎭 Cultural Experiences</h3>
+          <p>Enjoy local dance performances, artisan markets, and traditional Tanitian food.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Taniti Tourism</p>
+  </footer>
+
+  <script>
+    const homeLink = document.getElementById('homeLink');
+    const activitiesLink = document.getElementById('activitiesLink');
+    const homePage = document.getElementById('homePage');
+    const activitiesPage = document.getElementById('activitiesPage');
+
+    homeLink.addEventListener('click', () => {
+      homePage.classList.add('active');
+      activitiesPage.classList.remove('active');
+    });
+
+    activitiesLink.addEventListener('click', () => {
+      activitiesPage.classList.add('active');
+      homePage.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
